@@ -1,4 +1,4 @@
-const {resolvePath, readDirectory, validateLinks} = require('./lib/functions.js');
+const { resolvePath, readDirectory, validateLinks } = require('./lib/functions.js');
 const { readAllFiles } = require('./lib/readFile');
 const marked = require('marked')
 const path = require('path')
@@ -14,28 +14,29 @@ const path = require('path')
 //     si es False: href, text, file
 // stats: Booleano que determina si s
 
+
 // Printing process.argv property value
 const pathTerminal = process.argv[2]
 
-const mdLinks = (myPath, options={validate:false}) => {
+const mdLinks = (myPath, options = { validate: false }) => {
   //Resolviendo la validación de la ruta
-const resolvePath = path.resolve(myPath)
+  const resolvePath = path.resolve(myPath)
 
   const arrayMD = readDirectory(resolvePath);
   return new Promise((resolve, reject) => {
-    if(options.validate === true) {
+    if (options.validate === true) {
       readAllFiles(arrayMD)
-      .then(res => validateLinks(res))
-      .then(resValidate => resolve(resValidate))
+        .then(res => validateLinks(res))
+        .then(resValidate => resolve(resValidate))
     } else {
       readAllFiles(arrayMD).then(res => resolve(res))
     }
-    
+
   })
 }
 
-mdLinks(pathTerminal).then(res=>console.log('resultado fn mdlinks: ', res))
-module.exports = {mdLinks}
+mdLinks(pathTerminal).then(res => console.log('resultado fn mdlinks: ', res))
+module.exports = { mdLinks }
 
 //catch(error => {reject(error)})
 /* module.exports = () => {
