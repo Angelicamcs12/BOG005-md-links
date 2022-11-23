@@ -20,10 +20,14 @@ El programa es ejecutable mediante un CLI, y su programación esta basada en pro
 ## 4. Uso de la aplicación
 
 Para usar el modulo, lo puedes instalar con el siguiente comando desde tu terminal:
-  npm i angelicamcs-md-links
+```sh
+ npm i angelicamcs-md-links
+```
 
-La biblioteca se importa y usa de acuerdo al siguiente ejemplo
-  const {mdLinks} = require('angelicamcs-md-links')
+La biblioteca se importa y usa de acuerdo al siguiente ejemplo:
+```sh
+ const {mdLinks} = require('angelicamcs-md-links')
+```
 
 los comandos validos de opciones desde la terminal son:
   --validate
