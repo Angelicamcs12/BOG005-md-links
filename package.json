@@ -4,8 +4,34 @@
   "engines": {
     "node": ">=14.x"
   },
+  "description": "Libreria que busca archivos .md y valida los links",
+  "main": "index.js",
+  "bin": {
+    "md-links": "./lib/cli.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "coverage": "jest --coverage",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angelicamcs12/BOG005-md-links.git"
+  },
+  "author": "Angélica Chaparro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Angelicamcs12/BOG005-md-links/issues"
+  },
+  "homepage": "https://github.com/Angelicamcs12/BOG005-md-links#readme",
+  "devDependencies": {
+    "jest": "^29.0.3",
+    "nodemon": "^2.0.20"
+  },
   "dependencies": {
     "marked": "^4.2.2",
-    "node-fetch": "^3.3.0"
+    "node-fetch": "^2.6.7"
   }
 }
