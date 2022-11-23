@@ -9,7 +9,7 @@ describe('Probando funciones', () => {
     expect(typeof mdLinks).toBe('function');
   });
 
-  it('mdLinks validate en false', done => {
+  it('mdLinks validate en false', (done) => {
     mdLinks(mocks.path, {validate: false}).then(res => {
       const validateFalse = mocks.objValidateFalse;
       expect(res).toEqual(validateFalse)
@@ -21,7 +21,7 @@ describe('Probando funciones', () => {
     expect(typeof statsLinks).toBe('function');
   });
 
-  it('stats en true', done => {
+  it('stats en true', (done) => {
     mdLinks(mocks.path, {validate: true}).then(res => {
       const resStats = statsLinks(res)
       const inStatsTrue = mocks.statsTrue
@@ -34,7 +34,7 @@ describe('Probando funciones', () => {
     expect(typeof validateLinks).toBe('function');
   });
 
-  it('validateLinks cuando tiene las dos opciones', done => {
+  it('validateLinks cuando tiene las dos opciones', (done) => {
     mdLinks(mocks.path, {validate: true}).then(res => {
       const resValidateLinks = validateLinks(res)
       const inValidateLinks = mocks.validateLinks
